@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+    <bean id="studentGrades" class="com.model.StudentGrades" p:name="张三" p:grades-ref="grades"/>
+    <util:map id="grades">
+        <entry key="语文" value="80.0"/>
+        <entry key="英语" value="60.0"/>
+        <entry key="数学" value="55.0"/>
+        <entry key="地理" value="50.0"/>
+    </util:map>
+</beans>

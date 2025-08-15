@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+    <bean id="teacher" class="com.model.Teacher">
+        <property name="name" value="张三"/>
+        <property name="address" value="杭州"/>
+    </bean>
+</beans>

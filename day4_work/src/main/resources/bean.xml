@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="user" class="com.problem_01.model.User">
+        <property name="name" value="张三"/>
+        <property name="salary" ref="newDouble"/>
+    </bean>
+    <bean id="newDouble" class="com.problem_01.model.NewDouble" p:value="123.456"/>
+    <bean id="salaryConverter" class="com.problem_01.converter.SalaryConverter"/>
+    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <ref bean="salaryConverter"/>
+            </set>
+        </property>
+    </bean>
+</beans>

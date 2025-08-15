@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+    <bean id="libraryAdmin" class="com.model.LibraryAdmin" p:books-ref="books" p:users-ref="users"/>
+    <util:map id="books">
+        <entry key="红色A" value="《java基础图书》"/>
+        <entry key="蓝色A" value="《oracle数据库》"/>
+        <entry key="红色B" value="《html》"/>
+        <entry key="蓝色B" value="《三国演义》"/>
+    </util:map>
+    <util:list id="users">
+        <ref bean="user1"/>
+        <ref bean="user2"/>
+        <ref bean="user3"/>
+        <ref bean="user4"/>
+    </util:list>
+    <bean id="user1" class="com.model.User" p:username="张三" p:card="红色A"/>
+    <bean id="user2" class="com.model.User" p:username="李四" p:card="蓝色A"/>
+    <bean id="user3" class="com.model.User" p:username="张三" p:card="红色B"/>
+    <bean id="user4" class="com.model.User" p:username="李四" p:card="蓝色B"/>
+</beans>

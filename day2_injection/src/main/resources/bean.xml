@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="teacherService" class="com.injection.TeacherService" p:name="张三" p:age="30" p:addresses="">
+    <property name="name" value="张三"/>
+    <property name="age" value="30"/>
+    <property name="addresses">
+        <list>
+            <value>南京</value>
+            <value>北京</value>
+            <value>天津</value>
+            <value>上海</value>
+        </list>
+    </property>
+    <property name="set">
+        <set>
+            <value>AAA</value>
+            <value>BBB</value>
+            <value>CCC</value>
+        </set>
+    </property>
+    <property name="list">
+        <list>
+            <value>AAA</value>
+            <value>BBB</value>
+            <value>CCC</value>
+        </list>
+    </property>
+    <property name="map">
+        <map>
+            <entry key="AAA" value="1.1"/>
+            <entry key="BBB" value="2.2"/>
+            <entry key="CCC" value="3.3"/>
+        </map>
+    </property>
+    <property name="properties">
+        <props>
+            <prop key="AAA">1.1</prop>
+            <prop key="BBB">2.2</prop>
+            <prop key="CCC">3.3</prop>
+        </props>
+    </property>
+    <property name="teacherDao" ref="dao"/>
+</bean>
+<bean id="dao" class="com.injection.TeacherDaoImpl"/>
+</beans>
